@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Youtube, Mail, Phone, Globe, Sun, Moon } from "lucide-react";
+import { ExternalLink, Github, Youtube, Mail, Phone, Globe, Sun, Moon, Facebook } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -107,19 +107,25 @@ export default function Home() {
   ];
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 overflow-hidden ${
-      theme === "dark" ? "bg-gray-950" : "bg-white"
-    }`}>
+    <div
+      className={`min-h-screen transition-colors duration-300 overflow-hidden ${
+        theme === "dark" ? "bg-gray-950" : "bg-white"
+      }`}
+    >
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        theme === "dark"
-          ? "bg-gray-900/80 border-b border-gray-800"
-          : "bg-white/80 border-b border-gray-100"
-      } backdrop-blur-md`}>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+          theme === "dark"
+            ? "bg-gray-900/80 border-b border-gray-800"
+            : "bg-white/80 border-b border-gray-100"
+        } backdrop-blur-md`}
+      >
         <div className="container flex items-center justify-between h-16">
-          <div className={`text-2xl font-bold transition-colors duration-300 ${
-            theme === "dark" ? "text-white" : "text-gray-900"
-          }`}>
+          <div
+            className={`text-2xl font-bold transition-colors duration-300 ${
+              theme === "dark" ? "text-white" : "text-gray-900"
+            }`}
+          >
             <span className="text-blue-600">Y</span>ossof
           </div>
           <div className="flex items-center gap-4">
@@ -158,6 +164,18 @@ export default function Home() {
               <Github size={20} />
             </a>
             <a
+              href="https://www.facebook.com/YossofABD/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`transition-colors ${
+                theme === "dark"
+                  ? "text-gray-400 hover:text-blue-400"
+                  : "text-gray-600 hover:text-blue-600"
+              }`}
+            >
+              <Facebook size={20} />
+            </a>
+            <a
               href="https://www.youtube.com/@overclock33"
               target="_blank"
               rel="noopener noreferrer"
@@ -186,16 +204,20 @@ export default function Home() {
             transform: `translateY(${scrollY * 0.5}px)`,
           }}
         />
-        <div className={`absolute inset-0 z-1 transition-colors duration-300 ${
-          theme === "dark"
-            ? "bg-gradient-to-b from-gray-950 via-gray-950/80 to-gray-950"
-            : "bg-gradient-to-b from-white via-white/80 to-white"
-        }`} />
+        <div
+          className={`absolute inset-0 z-1 transition-colors duration-300 ${
+            theme === "dark"
+              ? "bg-gradient-to-b from-gray-950 via-gray-950/80 to-gray-950"
+              : "bg-gradient-to-b from-white via-white/80 to-white"
+          }`}
+        />
 
         {/* Animated geometric shapes */}
-        <div className={`absolute top-20 left-10 w-32 h-32 border-2 rounded-lg opacity-20 animate-pulse ${
-          theme === "dark" ? "border-blue-400" : "border-blue-200"
-        }`} />
+        <div
+          className={`absolute top-20 left-10 w-32 h-32 border-2 rounded-lg opacity-20 animate-pulse ${
+            theme === "dark" ? "border-blue-400" : "border-blue-200"
+          }`}
+        />
         <div
           className={`absolute bottom-20 right-20 w-24 h-24 border-2 rounded-full opacity-15 ${
             theme === "dark" ? "border-blue-400" : "border-blue-300"
@@ -208,44 +230,58 @@ export default function Home() {
         <div className="container relative z-10">
           <div className={`max-w-3xl ${isArabic ? "text-right" : ""}`}>
             <div className="inline-block mb-4">
-              <span className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-                theme === "dark"
-                  ? "bg-blue-900/40 text-blue-300"
-                  : "bg-blue-50 text-blue-600"
-              }`}>
+              <span
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
+                  theme === "dark"
+                    ? "bg-blue-900/40 text-blue-300"
+                    : "bg-blue-50 text-blue-600"
+                }`}
+              >
                 {t("hero.badge")}
               </span>
             </div>
 
-            <h1 className={`text-5xl md:text-6xl font-bold mb-6 leading-tight transition-colors duration-300 ${
-              theme === "dark" ? "text-white" : "text-gray-900"
-            }`}>
-              {t("hero.title").split(" ").map((word, idx) => (
-                <span key={idx}>
-                  {idx === t("hero.title").split(" ").length - 1 ? (
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
-                      {word}
-                    </span>
-                  ) : (
-                    word
-                  )}{" "}
-                </span>
-              ))}
+            <h1
+              className={`text-5xl md:text-6xl font-bold mb-6 leading-tight transition-colors duration-300 ${
+                theme === "dark" ? "text-white" : "text-gray-900"
+              }`}
+            >
+              {t("hero.title")
+                .split(" ")
+                .map((word, idx) => (
+                  <span key={idx}>
+                    {idx === t("hero.title").split(" ").length - 1 ? (
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
+                        {word}
+                      </span>
+                    ) : (
+                      word
+                    )}{" "}
+                  </span>
+                ))}
             </h1>
 
-            <p className={`text-xl mb-8 leading-relaxed max-w-2xl transition-colors duration-300 ${
-              theme === "dark" ? "text-gray-300" : "text-gray-600"
-            } ${isArabic ? "text-right" : ""}`}>
+            <p
+              className={`text-xl mb-8 leading-relaxed max-w-2xl transition-colors duration-300 ${
+                theme === "dark" ? "text-gray-300" : "text-gray-600"
+              } ${isArabic ? "text-right" : ""}`}
+            >
               {t("hero.description")}
             </p>
 
-            <div className={`flex flex-wrap gap-4 ${isArabic ? "justify-end" : ""}`}>
+            <div
+              className={`flex flex-wrap gap-4 ${isArabic ? "justify-end" : ""}`}
+            >
               <a href="#projects" className="scroll-smooth">
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-lg transition-all hover:shadow-lg">
                   {t("hero.viewProjects")}
                 </Button>
               </a>
-              <a href="https://github.com/Yossof0/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/Yossof0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   variant="outline"
                   className={`px-8 py-6 text-lg rounded-lg transition-colors duration-300 ${
@@ -264,9 +300,11 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section className={`py-20 relative overflow-hidden transition-colors duration-300 ${
-        theme === "dark" ? "bg-gray-900" : "bg-gray-50"
-      }`}>
+      <section
+        className={`py-20 relative overflow-hidden transition-colors duration-300 ${
+          theme === "dark" ? "bg-gray-900" : "bg-gray-50"
+        }`}
+      >
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -277,9 +315,11 @@ export default function Home() {
         />
 
         <div className="container relative z-10">
-          <h2 className={`text-4xl font-bold mb-12 transition-colors duration-300 ${
-            theme === "dark" ? "text-white" : "text-gray-900"
-          } ${isArabic ? "text-right" : ""}`}>
+          <h2
+            className={`text-4xl font-bold mb-12 transition-colors duration-300 ${
+              theme === "dark" ? "text-white" : "text-gray-900"
+            } ${isArabic ? "text-right" : ""}`}
+          >
             {t("skills.title")}
           </h2>
 
@@ -296,11 +336,17 @@ export default function Home() {
                   animation: `slideUp 0.6s ease-out ${idx * 0.1}s both`,
                 }}
               >
-                <h3 className={`text-xl font-semibold mb-4 transition-colors duration-300 ${
-                  theme === "dark" ? "text-white" : "text-gray-900"
-                }`}>{category.title}</h3>
-                <div className={`flex flex-wrap gap-2 ${isArabic ? "justify-end" : ""}`}>
-                  {category.items.map((skill) => (
+                <h3
+                  className={`text-xl font-semibold mb-4 transition-colors duration-300 ${
+                    theme === "dark" ? "text-white" : "text-gray-900"
+                  }`}
+                >
+                  {category.title}
+                </h3>
+                <div
+                  className={`flex flex-wrap gap-2 ${isArabic ? "justify-end" : ""}`}
+                >
+                  {category.items.map(skill => (
                     <span
                       key={skill}
                       className={`px-3 py-1 rounded-full text-sm font-medium transition-colors duration-300 ${
@@ -320,13 +366,17 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className={`py-20 relative overflow-hidden transition-colors duration-300 ${
-        theme === "dark" ? "bg-gray-950" : "bg-white"
-      }`}>
+      <section
+        className={`py-20 relative overflow-hidden transition-colors duration-300 ${
+          theme === "dark" ? "bg-gray-950" : "bg-white"
+        }`}
+      >
         <div className="container relative z-10">
-          <h2 className={`text-4xl font-bold mb-12 transition-colors duration-300 ${
-            theme === "dark" ? "text-white" : "text-gray-900"
-          } ${isArabic ? "text-right" : ""}`}>
+          <h2
+            className={`text-4xl font-bold mb-12 transition-colors duration-300 ${
+              theme === "dark" ? "text-white" : "text-gray-900"
+            } ${isArabic ? "text-right" : ""}`}
+          >
             {t("contact.title")}
           </h2>
 
@@ -365,15 +415,25 @@ export default function Home() {
                     animation: `slideUp 0.6s ease-out ${idx * 0.1}s both`,
                   }}
                 >
-                  <div className={`flex items-center gap-3 mb-3 ${isArabic ? "justify-end" : ""}`}>
+                  <div
+                    className={`flex items-center gap-3 mb-3 ${isArabic ? "justify-end" : ""}`}
+                  >
                     <Icon size={24} className="text-blue-600" />
-                    <h3 className={`text-lg font-semibold transition-colors duration-300 ${
-                      theme === "dark" ? "text-white" : "text-gray-900"
-                    }`}>{contact.label}</h3>
+                    <h3
+                      className={`text-lg font-semibold transition-colors duration-300 ${
+                        theme === "dark" ? "text-white" : "text-gray-900"
+                      }`}
+                    >
+                      {contact.label}
+                    </h3>
                   </div>
-                  <p className={`font-medium transition-colors duration-300 ${
-                    theme === "dark" ? "text-gray-300" : "text-gray-600"
-                  }`}>{contact.value}</p>
+                  <p
+                    className={`font-medium transition-colors duration-300 ${
+                      theme === "dark" ? "text-gray-300" : "text-gray-600"
+                    }`}
+                  >
+                    {contact.value}
+                  </p>
                 </a>
               );
             })}
@@ -382,9 +442,12 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className={`py-20 relative overflow-hidden transition-colors duration-300 ${
-        theme === "dark" ? "bg-gray-900" : "bg-gray-50"
-      }`}>
+      <section
+        id="projects"
+        className={`py-20 relative overflow-hidden transition-colors duration-300 ${
+          theme === "dark" ? "bg-gray-900" : "bg-gray-50"
+        }`}
+      >
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -396,21 +459,25 @@ export default function Home() {
         />
 
         <div className="container relative z-10">
-          <h2 className={`text-4xl font-bold mb-4 transition-colors duration-300 ${
-            theme === "dark" ? "text-white" : "text-gray-900"
-          } ${isArabic ? "text-right" : ""}`}>
+          <h2
+            className={`text-4xl font-bold mb-4 transition-colors duration-300 ${
+              theme === "dark" ? "text-white" : "text-gray-900"
+            } ${isArabic ? "text-right" : ""}`}
+          >
             {t("projects.title")}
           </h2>
-          <p className={`mb-12 text-lg transition-colors duration-300 ${
-            theme === "dark" ? "text-gray-400" : "text-gray-600"
-          } ${isArabic ? "text-right" : ""}`}>
+          <p
+            className={`mb-12 text-lg transition-colors duration-300 ${
+              theme === "dark" ? "text-gray-400" : "text-gray-600"
+            } ${isArabic ? "text-right" : ""}`}
+          >
             {t("projects.subtitle")}
           </p>
 
           {/* Featured Projects */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {projects
-              .filter((p) => p.featured)
+              .filter(p => p.featured)
               .map((project, idx) => (
                 <a
                   key={project.id}
@@ -422,25 +489,35 @@ export default function Home() {
                     animation: `slideUp 0.6s ease-out ${idx * 0.1}s both`,
                   }}
                 >
-                  <div className={`rounded-lg border p-6 h-full flex flex-col transition-all duration-300 ${
-                    theme === "dark"
-                      ? "bg-gray-800 border-gray-700 hover:border-blue-500"
-                      : "bg-white border-gray-200 hover:border-blue-300"
-                  } hover:shadow-xl ${isArabic ? "text-right" : ""}`}>
-                    <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
+                  <div
+                    className={`rounded-lg border p-6 h-full flex flex-col transition-all duration-300 ${
                       theme === "dark"
-                        ? "text-white group-hover:text-blue-400"
-                        : "text-gray-900 group-hover:text-blue-600"
-                    }`}>
+                        ? "bg-gray-800 border-gray-700 hover:border-blue-500"
+                        : "bg-white border-gray-200 hover:border-blue-300"
+                    } hover:shadow-xl ${isArabic ? "text-right" : ""}`}
+                  >
+                    <h3
+                      className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
+                        theme === "dark"
+                          ? "text-white group-hover:text-blue-400"
+                          : "text-gray-900 group-hover:text-blue-600"
+                      }`}
+                    >
                       {t(project.titleKey)}
                     </h3>
-                    <p className={`mb-4 flex-grow transition-colors duration-300 ${
-                      theme === "dark" ? "text-gray-300" : "text-gray-600"
-                    }`}>{t(project.descKey)}</p>
-                    <div className={`flex flex-wrap gap-2 mb-4 ${isArabic ? "justify-end" : ""}`}>
+                    <p
+                      className={`mb-4 flex-grow transition-colors duration-300 ${
+                        theme === "dark" ? "text-gray-300" : "text-gray-600"
+                      }`}
+                    >
+                      {t(project.descKey)}
+                    </p>
+                    <div
+                      className={`flex flex-wrap gap-2 mb-4 ${isArabic ? "justify-end" : ""}`}
+                    >
                       {t(project.tagsKey)
                         .split(",")
-                        .map((tag) => (
+                        .map(tag => (
                           <span
                             key={tag}
                             className={`px-2 py-1 rounded text-xs font-medium transition-colors duration-300 ${
@@ -453,9 +530,14 @@ export default function Home() {
                           </span>
                         ))}
                     </div>
-                    <div className={`flex items-center text-blue-600 group-hover:translate-x-1 transition-transform ${isArabic ? "justify-end group-hover:translate-x-0 group-hover:-translate-x-1" : ""}`}>
+                    <div
+                      className={`flex items-center text-blue-600 group-hover:translate-x-1 transition-transform ${isArabic ? "justify-end group-hover:translate-x-0 group-hover:-translate-x-1" : ""}`}
+                    >
                       {t("projects.view")}
-                      <ExternalLink size={16} className={isArabic ? "mr-2" : "ml-2"} />
+                      <ExternalLink
+                        size={16}
+                        className={isArabic ? "mr-2" : "ml-2"}
+                      />
                     </div>
                   </div>
                 </a>
@@ -464,15 +546,17 @@ export default function Home() {
 
           {/* Other Projects */}
           <div className="mb-8">
-            <h3 className={`text-2xl font-semibold mb-6 transition-colors duration-300 ${
-              theme === "dark" ? "text-white" : "text-gray-900"
-            } ${isArabic ? "text-right" : ""}`}>
+            <h3
+              className={`text-2xl font-semibold mb-6 transition-colors duration-300 ${
+                theme === "dark" ? "text-white" : "text-gray-900"
+              } ${isArabic ? "text-right" : ""}`}
+            >
               {t("projects.other")}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {projects
-                .filter((p) => !p.featured)
-                .map((project) => (
+                .filter(p => !p.featured)
+                .map(project => (
                   <a
                     key={project.id}
                     href={project.link}
@@ -480,24 +564,37 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="group"
                   >
-                    <div className={`rounded-lg border p-4 transition-all duration-300 ${
-                      theme === "dark"
-                        ? "bg-gray-800 border-gray-700 hover:border-blue-500"
-                        : "bg-white border-gray-200 hover:border-blue-300"
-                    } hover:shadow-lg ${isArabic ? "text-right" : ""}`}>
-                      <h4 className={`font-semibold transition-colors duration-300 mb-2 ${
+                    <div
+                      className={`rounded-lg border p-4 transition-all duration-300 ${
                         theme === "dark"
-                          ? "text-white group-hover:text-blue-400"
-                          : "text-gray-900 group-hover:text-blue-600"
-                      }`}>
+                          ? "bg-gray-800 border-gray-700 hover:border-blue-500"
+                          : "bg-white border-gray-200 hover:border-blue-300"
+                      } hover:shadow-lg ${isArabic ? "text-right" : ""}`}
+                    >
+                      <h4
+                        className={`font-semibold transition-colors duration-300 mb-2 ${
+                          theme === "dark"
+                            ? "text-white group-hover:text-blue-400"
+                            : "text-gray-900 group-hover:text-blue-600"
+                        }`}
+                      >
                         {t(project.titleKey)}
                       </h4>
-                      <p className={`text-sm mb-3 transition-colors duration-300 ${
-                        theme === "dark" ? "text-gray-400" : "text-gray-600"
-                      }`}>{t(project.descKey)}</p>
-                      <div className={`flex items-center text-blue-600 text-sm group-hover:translate-x-1 transition-transform ${isArabic ? "justify-end group-hover:translate-x-0 group-hover:-translate-x-1" : ""}`}>
+                      <p
+                        className={`text-sm mb-3 transition-colors duration-300 ${
+                          theme === "dark" ? "text-gray-400" : "text-gray-600"
+                        }`}
+                      >
+                        {t(project.descKey)}
+                      </p>
+                      <div
+                        className={`flex items-center text-blue-600 text-sm group-hover:translate-x-1 transition-transform ${isArabic ? "justify-end group-hover:translate-x-0 group-hover:-translate-x-1" : ""}`}
+                      >
                         {t("projects.view_short")}
-                        <ExternalLink size={14} className={isArabic ? "mr-1" : "ml-1"} />
+                        <ExternalLink
+                          size={14}
+                          className={isArabic ? "mr-1" : "ml-1"}
+                        />
                       </div>
                     </div>
                   </a>
@@ -515,24 +612,46 @@ export default function Home() {
           <div className="absolute bottom-10 right-10 w-32 h-32 border border-white rounded-full" />
         </div>
 
-        <div className={`container relative z-10 text-center ${isArabic ? "text-right" : ""}`}>
+        <div
+          className={`container relative z-10 text-center ${isArabic ? "text-right" : ""}`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             {t("cta.title")}
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             {t("cta.subtitle")}
           </p>
-          <div className={`flex flex-wrap justify-center gap-4 ${isArabic ? "justify-end" : ""}`}>
-            <a href="https://github.com/Yossof0/" target="_blank" rel="noopener noreferrer">
+          <div
+            className={`flex flex-wrap justify-center gap-4 ${isArabic ? "justify-end" : ""}`}
+          >
+            <a
+              href="https://github.com/Yossof0/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg rounded-lg transition-all">
                 <Github size={20} className={isArabic ? "ml-2" : "mr-2"} />
                 {t("cta.github")}
               </Button>
             </a>
-            <a href="https://www.youtube.com/@overclock33" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.youtube.com/@overclock33"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg rounded-lg transition-all">
                 <Youtube size={20} className={isArabic ? "ml-2" : "mr-2"} />
                 {t("cta.youtube")}
+              </Button>
+            </a>
+            <a
+              href="https://www.facebook.com/YossofABD/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg rounded-lg transition-all">
+                <Facebook size={20} className={isArabic ? "ml-2" : "mr-2"} />
+                {t("cta.facebook")}
               </Button>
             </a>
           </div>
@@ -540,14 +659,22 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className={`py-8 transition-colors duration-300 ${
-        theme === "dark" ? "bg-black text-gray-400" : "bg-gray-900 text-gray-400"
-      } ${isArabic ? "text-right" : ""}`}>
+      <footer
+        className={`py-8 transition-colors duration-300 ${
+          theme === "dark"
+            ? "bg-black text-gray-400"
+            : "bg-gray-900 text-gray-400"
+        } ${isArabic ? "text-right" : ""}`}
+      >
         <div className="container">
-          <div className={`flex flex-col md:flex-row justify-between items-center ${isArabic ? "md:flex-row-reverse" : ""}`}>
-            <div className={`font-bold mb-4 md:mb-0 transition-colors duration-300 ${
-              theme === "dark" ? "text-white" : "text-white"
-            }`}>
+          <div
+            className={`flex flex-col md:flex-row justify-between items-center ${isArabic ? "md:flex-row-reverse" : ""}`}
+          >
+            <div
+              className={`font-bold mb-4 md:mb-0 transition-colors duration-300 ${
+                theme === "dark" ? "text-white" : "text-white"
+              }`}
+            >
               <span className="text-blue-400">Y</span>ossof Abdelwahed
             </div>
             <div className={`flex gap-6 ${isArabic ? "flex-row-reverse" : ""}`}>
@@ -567,11 +694,21 @@ export default function Home() {
               >
                 YouTube
               </a>
+              <a
+                href="https://www.facebook.com/YossofABD/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                Facebook
+              </a>
             </div>
           </div>
-          <div className={`border-t transition-colors duration-300 ${
-            theme === "dark" ? "border-gray-800" : "border-gray-800"
-          } mt-8 pt-8 text-center text-sm`}>
+          <div
+            className={`border-t transition-colors duration-300 ${
+              theme === "dark" ? "border-gray-800" : "border-gray-800"
+            } mt-8 pt-8 text-center text-sm`}
+          >
             <p>{t("footer.copyright")}</p>
           </div>
         </div>

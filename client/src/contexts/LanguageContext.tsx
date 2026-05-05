@@ -72,6 +72,7 @@ const translations = {
       "I'm always interested in hearing about new projects and opportunities",
     "cta.github": "GitHub",
     "cta.youtube": "YouTube",
+    "cta.facebook": "Facebook",
 
     // Footer
     "footer.name": "Yossof Abdelwahed",
@@ -90,6 +91,8 @@ const translations = {
     // Navigation
     "nav.github": "جيتهاب",
     "nav.youtube": "يوتيوب",
+    "nav.facebook": "فيس بوك",
+
 
     // Hero Section
     "hero.badge": "مطور ويب • 15 سنة",
@@ -147,10 +150,10 @@ const translations = {
       "أنا مهتم دائماً بسماع مشاريع وفرص جديدة",
     "cta.github": "جيتهاب",
     "cta.youtube": "يوتيوب",
-
+    "cta.facebook": "فيس بوك",
     // Footer
     "footer.name": "يوسف عبدالواحد",
-    "footer.links": "جيتهاب,يوتيوب",
+    "footer.links": "جيتهاب,يوتيوب,فيس بوك",
     "footer.copyright": "© 2026 يوسف عبدالواحد. جميع الحقوق محفوظة.",
 
     // Contact
